@@ -22,4 +22,8 @@ class Node<T> {
         this.next=next;
     }
     
+    public T getValue(){
+        return val;
+    }
+    
 }

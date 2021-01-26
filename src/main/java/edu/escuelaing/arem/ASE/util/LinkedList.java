@@ -20,15 +20,18 @@ public class LinkedList<E> implements List<E>{
     Node<E> last=null;
     int size=0;
     
+    public LinkedList(){
+        super();
+    }
     
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return first==null && last==null;
     }
 
     @Override
@@ -56,6 +59,7 @@ public class LinkedList<E> implements List<E>{
         Node n = new Node(e);
         n.setNext(first);
         first = n;
+        size++;
         return true;
     }
 
