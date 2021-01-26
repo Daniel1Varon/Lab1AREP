@@ -5,11 +5,13 @@
  */
 package edu.escuelaing.arem.ASE.app;
 
+import edu.escuelaing.arem.ASE.util.LinkedList;
+import java.util.List;
 import junit.framework.TestCase;
 
 /**
  *
- * @author USER
+ * @author Daniel Varón
  */
 public class AppIT extends TestCase {
     
@@ -32,8 +34,9 @@ public class AppIT extends TestCase {
      */
     public void testMean() {
         System.out.println("mean");
-        Object lista = null;
-        double expResult = 0.0;
+        List<Double> lista = new LinkedList();
+        lista.add(160.0);
+        double expResult = 160.0;
         double result = App.mean(lista);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
@@ -45,7 +48,7 @@ public class AppIT extends TestCase {
      */
     public void testStandard() {
         System.out.println("standard");
-        Object lista = null;
+        List<Double> lista = null;
         double expResult = 0.0;
         double result = App.standard(lista);
         assertEquals(expResult, result, 0.0);

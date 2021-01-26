@@ -1,8 +1,10 @@
 package edu.escuelaing.arem.ASE.app;
 
+import java.util.List;
+
 /**
- * Hello world!
  *
+ * @author Daniel Varón
  */
 public class App 
 {
