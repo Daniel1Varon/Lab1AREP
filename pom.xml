@@ -19,17 +19,17 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <reporting>
+  <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.2.0</version>
         <configuration>
-          <stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
-          <show>public</show>
+          <show>private</show>
+          <nohelp>true</nohelp>
         </configuration>
       </plugin>
     </plugins>
-  </reporting>
+  </build>
 </project>

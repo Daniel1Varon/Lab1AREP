@@ -6,7 +6,6 @@
 package edu.escuelaing.arem.ASE.util;
 
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -19,6 +18,7 @@ public class LinkedList<E> implements List<E>{
     Node<E> first=null;
     Node<E> last=null;
     int size=0;
+    private Iterador it=null;
     
     public LinkedList(){
         super();
@@ -36,12 +36,16 @@ public class LinkedList<E> implements List<E>{
 
     @Override
     public boolean contains(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return indexOf(o) >= 0;
     }
 
     @Override
-    public Iterator<E> iterator() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Iterador<E> iterator() {
+        if(it==null){
+            it=new Iterador();
+        }
+        it.setSize(size);
+        return it;
     }
 
     @Override
@@ -120,7 +124,21 @@ public class LinkedList<E> implements List<E>{
 
     @Override
     public int indexOf(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int index = 0;
+        if (o == null) {
+            for (Node<E> x = first; x != null; x = x.next()) {
+                if (x.getValue() == null)
+                    return index;
+                index++;
+            }
+        } else {
+            for (Node<E> x = first; x != null; x = x.next()) {
+                if (o.equals(x.getValue()))
+                    return index;
+                index++;
+            }
+        }
+        return -1;
     }
 
     @Override

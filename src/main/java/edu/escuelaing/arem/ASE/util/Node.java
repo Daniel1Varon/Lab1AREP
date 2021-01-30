@@ -7,7 +7,7 @@ package edu.escuelaing.arem.ASE.util;
 
 /**
  *
- * @author "Daniel Varón"
+ * @author Daniel Varón
  */
 class Node<T> {
     
@@ -16,6 +16,10 @@ class Node<T> {
     
     public Node(T val){
         this.val=val;
+    }
+    
+    public Node<T> next(){
+        return next;
     }
     
     public void setNext(Node next){
