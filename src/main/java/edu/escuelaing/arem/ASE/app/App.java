@@ -10,8 +10,14 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
+
     }
 
+    /**
+     *
+     * @param lista
+     * @return
+     */
     public static double mean(List<Double> lista) {
         double suma = 0.0;
         for (double e : lista) {
@@ -20,6 +26,11 @@ public class App {
         return suma / lista.size();
     }
 
+    /**
+     *
+     * @param lista
+     * @return
+     */
     public static double standard(List<Double> lista) {
         double std = 0.0;
         double avg = mean(lista);
