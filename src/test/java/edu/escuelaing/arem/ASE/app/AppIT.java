@@ -15,6 +15,8 @@ import junit.framework.TestCase;
  */
 public class AppIT extends TestCase {
     
+    LinkedList<Double> lista = new LinkedList();
+    
     public AppIT(String testName) {
         super(testName);
     }
@@ -22,6 +24,8 @@ public class AppIT extends TestCase {
     @Override
     protected void setUp() throws Exception {
         super.setUp();
+        lista.add(160.0);
+        
     }
     
     @Override
@@ -34,10 +38,9 @@ public class AppIT extends TestCase {
      */
     public void testMean() {
         System.out.println("mean");
-        List<Double> lista = new LinkedList();
-        lista.add(160.0);
         double expResult = 160.0;
         double result = App.mean(lista);
+        System.out.println(result);
         assertEquals(expResult, result, 0.0);
     }
 
@@ -46,9 +49,9 @@ public class AppIT extends TestCase {
      */
     public void testStandard() {
         System.out.println("standard");
-        List<Double> lista = null;
         double expResult = 0.0;
         double result = App.standard(lista);
+        System.out.println(result);
         assertEquals(expResult, result, 0.0);
     }
     

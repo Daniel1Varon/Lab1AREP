@@ -1,5 +1,6 @@
 package edu.escuelaing.arem.ASE.app;
 
+import edu.escuelaing.arem.ASE.util.LinkedList;
 import java.util.List;
 
 /**
@@ -8,20 +9,17 @@ import java.util.List;
  */
 public class App {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-
-    }
-
     /**
      *
      * @param lista
      * @return
      */
-    public static double mean(List<Double> lista) {
+    public static double mean(LinkedList<Double> lista) {
         double suma = 0.0;
-        for (double e : lista) {
-            suma += e;
+        lista.current();
+        while(lista.hasNext()){
+            suma += lista.next();
+            System.out.println(lista.next()+"ss");
         }
         return suma / lista.size();
     }
@@ -31,11 +29,12 @@ public class App {
      * @param lista
      * @return
      */
-    public static double standard(List<Double> lista) {
+    public static double standard(LinkedList<Double> lista) {
         double std = 0.0;
         double avg = mean(lista);
-        for (double e : lista) {
-            std += Math.pow((e * avg), 2);
+        lista.current();
+        while(lista.hasNext()){
+            std += Math.pow((lista.next() * avg), 2);
         }
         return Math.sqrt(std / (lista.size() - 1));
     }

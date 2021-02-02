@@ -14,7 +14,7 @@ import java.util.Iterator;
  */
 public class Iterador<E> implements Iterator {
 
-    protected int posicionarray;
+    protected static int posicionarray;
     int size=0;
     public Iterador() {
         posicionarray = 0;
@@ -22,9 +22,7 @@ public class Iterador<E> implements Iterator {
 
     @Override
     public boolean hasNext() {
-        boolean result;
-        result = posicionarray+1 < size;
-        return result;
+        return posicionarray+1 < size;
     }
     
     public void setSize(int size){
@@ -33,7 +31,7 @@ public class Iterador<E> implements Iterator {
     
     @Override
     public Object next() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return posicionarray+1;
     }
 
 }

@@ -8,7 +8,6 @@ package edu.escuelaing.arem.ASE.util;
 import java.util.Collection;
 import java.util.List;
 import java.util.ListIterator;
-
 /**
  *
  * @author Daniel Varón
@@ -16,9 +15,10 @@ import java.util.ListIterator;
 public class LinkedList<E> implements List<E>{
 
     Node<E> first=null;
+    Node<E> current=null;
     Node<E> last=null;
     int size=0;
-    private Iterador it=null;
+    private Iterador it=new Iterador();
     
     public LinkedList(){
         super();
@@ -38,12 +38,33 @@ public class LinkedList<E> implements List<E>{
     public boolean contains(Object o) {
         return indexOf(o) >= 0;
     }
-
+    
+    public void current(){
+        current=first;
+    }
+    
+    public boolean hasNext(){
+        if(current==null){
+            current=first;
+            return true;
+        }
+        return current.next() != null;
+    }
+    
+    public E next(){
+        if(current==null){
+            current=first;
+        }
+        E i=current.getValue();
+        current=current.next();
+        return i;
+    }
+    /**
+     *
+     * @return
+     */
     @Override
     public Iterador<E> iterator() {
-        if(it==null){
-            it=new Iterador();
-        }
         it.setSize(size);
         return it;
     }
